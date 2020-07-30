@@ -15,14 +15,7 @@ import matplotlib.pyplot as plt
 
 
 # coordenadas estações meteorológicas do INMET
-cidades=[['Bagé',-31.33,-54.10],['Canela',-29.36,-50.81],['Canguçu',-31.40,-52.68],
-         ['Caxias do Sul',-29.16,-51.18],['Frederico Westphalen',-27.36,-53.40],
-         ['Iraí',-27.20,-53.25],['Passo Fundo',-28.26,-52.41],['Pelotas',-31.76,-52.34],
-         ['Porto Alegre',-30.03,-51.21],['Rio Grande',-32.03,-52.11],
-         ['Santa Maria',-29.69,-53.81],['Santa Vitória do Palmar',-33.53,-53.37],
-         ['São Luiz Gonzaga',-28.41,-54.96],['Torres',-29.33,-49.73],
-         ['Uruguaiana',-29.76,-57.09] ]
-estacoes_met=pd.DataFrame( cidades, columns=['cidade','lat','lon'] )  # tabela com coordenada das estações
+estacoes_met=pd.read_json("estationCities.json")  # tabela com coordenada das estações
 
 # usando um arquivo da PCWRF para obter pontos de grade
 arq = nc.Dataset( '../saidas/20200520_00/membro01/wrfout_d01_2020-05-20_00' )
